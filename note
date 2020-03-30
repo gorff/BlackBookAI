@@ -1,0 +1,3 @@
+run frontend webserver using nginx via:
+    docker run -d -p 80:80 gorff/html-server-image:1
+
