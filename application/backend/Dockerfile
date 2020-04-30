@@ -1,5 +1,6 @@
-# copy the current dir into the container
-copy . .
+# copy the current dir into the container 
+FROM tensorflow/serving
+WORKDIR / 
+ADD ./models ./models
 
-RUN pip install requirements.txt 
-
+RUN mkdir  /testimages

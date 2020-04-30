@@ -1,10 +1,20 @@
-version '3'
+version: "3.8"
+
 services:
-        web:
-                build: ./frontend
-                ports:
-                        - "80:80"
-        model:
-                build: /backend
-                ports:
-                        - "8080:8080"
+    backend:
+        build: 
+            context: ./backend
+        ports:
+            - 8501:8501
+            - 8500:8500
+        environment:
+            MODEL_NAME: catsAndDogs
+            MODEL_BASE_PATH: /models
+            container_name: tf
+        #volumes:
+        #    - ./:/app
+    frontend:
+        build: 
+            context: ./frontend
+        ports:
+            - 80:80

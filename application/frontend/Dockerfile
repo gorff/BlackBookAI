@@ -4,5 +4,5 @@ FROM nginx:alpine
 # the front end site is in the same dir as the dockerfile
 COPY . /usr/share/nginx/html
 
-# copy yhe current dir into the dockerfile
-copy . . 
+# copy the current dir into the dockerfile
+#COPY . . 
