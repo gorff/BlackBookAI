@@ -1,52 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Image Classifier</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="favicon.ico" />
-  </head>
 
-  <body>
-    <div class="top-container">
-      <div class="title-text">
-        <h1>Image Classifier</h1>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Image Classifier</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+  <div class="top-container">
+    <div class="title-text">
+      <h1>Image Classifier</h1>
+      <h2>For those times when you really dont know if its a cat or a dog</h2>
     </div>
+  </div>
 
-    <div class="image-input">
-      <input
-        id="uploadImage"
-        type="file"
-        name="myPhoto"
-        onchange="PreviewImage();"
-      />
+  <h3>Upload Image</h3>
 
-      <br /><br />
-      <img id="uploadPreview" style="width: 100px; height: 100px;" />
-    </div>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/*" name="photo">
+    <input type="submit" value="upload">
+    <br> <br>
 
-<div class = "results">
-  <button>compute</button>
-  <h3>Results:</h3>
-  <p>your image is a: </p>
+  </form>
+</body>
 
-</div>
 
-  </body>
-
-  <script type="text/javascript">
-    function PreviewImage() {
-      var oFReader = new FileReader();
-      oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
-      // document.getElementById("uploadImage").files[0] is what we want to pass to our other container. 
-      oFReader.onload = function(oFREvent) {
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-      };
-    }
-  </script>
 </html>

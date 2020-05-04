@@ -1,20 +1,28 @@
 version: "3.8"
 
+networks:
+    my-network:
+      driver: bridge
+
 services:
     backend:
         build: 
             context: ./backend
         ports:
-            - 8501:8501
-            - 8500:8500
+            - "8501:8501"
+            - "8500:8500"
         environment:
             MODEL_NAME: catsAndDogs
             MODEL_BASE_PATH: /models
             container_name: tf
-        #volumes:
+        # volumes:
         #    - ./:/app
+        networks:
+            - my-network
     frontend:
         build: 
             context: ./frontend
         ports:
-            - 49160:8080
+            - "8080:8080"
+        networks:
+            - my-network

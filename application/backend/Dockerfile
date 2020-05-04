@@ -2,5 +2,3 @@
 FROM tensorflow/serving
 WORKDIR / 
 ADD ./models ./models
-
-RUN mkdir  /testimages
