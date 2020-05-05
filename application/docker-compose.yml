@@ -15,8 +15,7 @@ services:
             MODEL_NAME: catsAndDogs
             MODEL_BASE_PATH: /models
             container_name: tf
-        # volumes:
-        #    - ./:/app
+
         networks:
             - my-network
     frontend:
