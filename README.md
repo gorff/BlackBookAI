@@ -7,9 +7,9 @@ Runs two containers
 - ubuntu base, running node webserver with python and tensorflow image preprocessing
 - Tensorflow serving, serving a trained cats/dogs classifier model. (see /application/backend/trainModel.ipynb)
 
-Front end accepts image files of cats (tested with jpg) of any dimension and uses a python script and tensorflow.keras.preprocessing.image.ImageDataGenerator to preprocess the image. 
+Front end accepts image files (tested with jpg) of any dimension and uses a python script and tensorflow.keras.preprocessing.image.ImageDataGenerator to preprocess the image. 
 
-This data is then sent via the tensorflow serving restful API to the backend for classification. 
+This data is then sent via the tensorflow serving restful API to the backend for classification as a cat or dog. 
 
 The response/classification from the backend is then displayed on the front end.
 
